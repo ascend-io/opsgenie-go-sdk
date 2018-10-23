@@ -128,7 +128,7 @@ func (cli *OpsGenieHeartbeatClient) List(req heartbeat.ListHeartbeatsRequest) (*
 	return &listHeartbeatsResp, nil
 }
 
-func (cli *OpsGenieHeartbeatClient) ListV2(req heartbeat.ListHeartbeatsRequest) (*heartbeat.ListHeartbeatsV2Response, error) {
+func (cli *OpsGenieHeartbeatClient) ListV2(req heartbeat.ListHeartbeatsRequest) (*heartbeat.HeartbeatListResponseV2, error) {
 	var response heartbeat.HeartbeatListResponseV2
 
 	if err := cli.sendGetRequest(&req, &response); err != nil {
