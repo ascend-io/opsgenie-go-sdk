@@ -81,4 +81,17 @@ type HeartbeatListResponseV2 struct {
 	Data struct {
 		Heartbeats []HeartbeatListData
 	} `json:"data"`
+	Took      float32 `json:"took"`
+	RequestId string  `json:requestId`
+}
+
+func (rm *HeartbeatListResponseV2) SetRequestID(requestID string) {
+	rm.RequestId = requestID
+}
+
+func (rm *HeartbeatListResponseV2) SetResponseTime(responseTime float32) {
+	rm.Took = responseTime
+}
+
+func (rm *HeartbeatListResponseV2) SetRateLimitState(state string) {
 }
