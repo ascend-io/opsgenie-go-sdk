@@ -128,6 +128,10 @@ func (r *ListHeartbeatsRequest) GenerateUrl() (string, url.Values, error) {
 	return "/v2/heartbeats", nil, nil
 }
 
+func (r *ListHeartbeatsRequest) GetApiKey() string {
+	return r.APIKey
+}
+
 // SendHeartbeatRequest provides necessary parameter structure to Send an Heartbeat Signal to OpsGenie.
 type SendHeartbeatRequest struct {
 	APIKey string `json:"apiKey"`
